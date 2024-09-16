@@ -1,0 +1,288 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: inline;
+}
+
+.jumbotron {
+  font-size: 20px;
+  padding: 60px;
+  color: #ffffff;
+  text-align: center;
+  background-image: url('/img/jumbotron.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: #3c3d37; 
+}
+
+nav {
+  width: 100%;
+  max-width: 1600px;
+  padding: 0.8rem 4rem;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(4px);
+}
+
+nav .logo img {
+  width: 150px;
+}
+
+nav ul {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem 1rem;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav li a {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+nav li:hover a {
+  background-color: #3c3d37;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  width: 30px;
+  height: 24px;
+}
+
+.hamburger span {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    opacity 0.3s ease-in-out;
+  left: 0;
+  user-select: none;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 10px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 20px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+  transform-origin: center;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 10px;
+  transform-origin: center;
+}
+
+main {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding: 2rem 4rem;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: 5;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
+  align-items: center;
+}
+
+.featured-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #3c3d37;
+  margin: 20px 0;
+}
+
+#content button {
+  padding: 0.5rem 1.2em;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  margin-block-start: 1rem;
+  background-color: #3c3d37;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+  align-self: flex-end;
+}
+
+#content button:hover {
+  border: 3px solid #3c3d37;
+  background-color: transparent;
+  color: #2d3e50;
+}
+
+aside {
+  flex: 1;
+}
+
+aside .profile header {
+  text-align: center;
+}
+
+aside h3 {
+  text-align: center;
+}
+
+.profile img {
+  max-width: 160px;
+}
+
+.social-media {
+  height: 100%;
+  display: flex;
+}
+
+.social-media ul {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  margin: auto;
+  background-color: #3c3d37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-media li {
+  list-style-type: none;
+}
+
+.social-media li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  transition: all 0.1s ease-in-out;
+}
+
+.social-media li a:hover {
+  color: #ecdfcc;
+}
+
+footer {
+  padding: 20px;
+  color: white;
+  background-color: #3c3d37;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+  main aside {
+    align-self: center;s
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0.8rem 2rem;
+  }
+
+  header nav ul {
+    justify-content: center;
+  }
+
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    padding: 1.5rem 4rem;
+    background-color: white;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+
+  header nav ul.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    position: relative;
+  }
+
+  main {
+    padding: 2rem 2rem;
+  }
+
+  main aside {
+    align-self: stretch;
+  }
+
+  #content button {
+    align-self: center;
+  }
+}
